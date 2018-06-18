@@ -1,6 +1,8 @@
 /* global shoppingList, cuid */
 
 // eslint-disable-next-line no-unused-vars
+'use strict'
+
 const store = {
   items: [
     { id: cuid(), name: 'apples', checked: false },
