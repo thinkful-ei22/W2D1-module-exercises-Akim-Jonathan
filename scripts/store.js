@@ -29,14 +29,14 @@ const store = (function () {
          this.findById(id).checked = true;
       }
   };
-  const findAndUpdateName = function(id,newName) {
+  const findAndUpdateName = function(id, itemName) {
     try {
-      Item.validateName(newName);
+      Item.validateName(itemName);
   }
     catch {
       console.log( 'Cannot add item: {error.message}');
   }
-    findById(id).name = newName;
+    findById(id).name = itemName;
   };
 
  const findAndDelete = function(id) {
@@ -44,7 +44,8 @@ const store = (function () {
     const filtered = this.items.filter(item => item.id !== id);
     this.items = filtered;
  };
+
   return {
     items, hideCheckedItems, searchTerm, findById, addItem, findAndToggleChecked, findAndUpdateName, findAndDelete
-  };
+  }; 
 }());
